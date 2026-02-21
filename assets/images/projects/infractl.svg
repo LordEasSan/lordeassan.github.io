@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360">
+  <rect width="560" height="360" fill="#111827"/>
+  <g stroke="#00FFC6" fill="none" stroke-width="1.2">
+    <rect x="180" y="220" width="200" height="50" rx="4" opacity=".6"/>
+    <rect x="195" y="155" width="170" height="50" rx="4" opacity=".4"/>
+    <rect x="210" y="90" width="140" height="50" rx="4" opacity=".25"/>
+  </g>
+  <g fill="#00FFC6">
+    <circle cx="200" cy="245" r="3" opacity=".6"/>
+    <circle cx="215" cy="245" r="3" opacity=".6"/>
+    <circle cx="230" cy="245" r="3" opacity=".6"/>
+    <circle cx="215" cy="180" r="3" opacity=".4"/>
+    <circle cx="230" cy="180" r="3" opacity=".4"/>
+    <circle cx="230" cy="115" r="3" opacity=".25"/>
+  </g>
+  <g stroke="#00FFC6" stroke-width=".8" opacity=".3">
+    <line x1="280" y1="155" x2="280" y2="220"/>
+    <line x1="280" y1="90" x2="280" y2="155"/>
+  </g>
+  <g stroke="#00FFC6" stroke-width=".5" stroke-dasharray="4,4" opacity=".15">
+    <line x1="350" y1="245" x2="370" y2="245"/>
+    <line x1="340" y1="180" x2="355" y2="180"/>
+    <line x1="330" y1="115" x2="340" y2="115"/>
+  </g>
+</svg>

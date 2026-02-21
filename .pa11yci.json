@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 30000,
+    "runners": ["htmlcs"]
+  },
+  "urls": [
+    "_site/index.html",
+    "_site/projects/index.html",
+    "_site/about/index.html",
+    "_site/blog/index.html",
+    "_site/404.html"
+  ]
+}

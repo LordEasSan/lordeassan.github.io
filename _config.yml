@@ -1,0 +1,76 @@
+# ─── Site Settings ───
+title: "AI_SEC"
+author: "Alessandro Bragetti"
+email: "alessandro.bragetti17@gmail.com"
+description: "AI Engineer · Security Mindset · Systems Thinking"
+role: "AI Engineer & Security Researcher"
+brand: "AI_SEC"
+baseurl: ""
+url: "https://lordeassan.github.io"
+
+# OG image
+og_image: "/assets/images/og-default.png"
+
+# Social links (used in footer + JSON-LD)
+social:
+  - name: GitHub
+    url: "https://github.com/LordEasSan"
+  - name: LinkedIn
+    url: "https://www.linkedin.com/in/alessandro-bragetti-a60447211/"
+  - name: Email
+    url: "mailto:alessandro.bragetti17@gmail.com"
+
+# ─── Build Settings ───
+theme: null
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+markdown: kramdown
+highlighter: rouge
+
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# ─── Collections ───
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+  writeups:
+    output: true
+    permalink: /writeups/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: "writeups"
+    values:
+      layout: writeup
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# ─── Excludes ───
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Gemfile.lock
+  - DEVELOPMENT.md
+  - README.md
+  - scripts
+  - .github
+  - .pa11yci.json
+
+# ─── Dev Settings ───
+livereload: true
+show_drafts: true

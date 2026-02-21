@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="writeup-post fade-in">
+  <header class="writeup-header">
+    <div class="row" style="gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:var(--space-2)">
+      {% if page.platform == 'hackthebox' %}
+      <span class="badge" style="background:rgba(159,243,0,0.12);color:#9FF300">HTB</span>
+      {% elsif page.platform == 'tryhackme' %}
+      <span class="badge" style="background:rgba(255,255,255,0.08);color:#C11111">THM</span>
+      {% endif %}
+      {% if page.difficulty %}
+      <span class="badge {% if page.difficulty == 'Easy' %}diff-easy{% elsif page.difficulty == 'Medium' %}diff-medium{% else %}diff-hard{% endif %}">{{ page.difficulty }}</span>
+      {% endif %}
+      {% if page.os %}
+      <span class="badge">{{ page.os }}</span>
+      {% endif %}
+    </div>
+    <h1 style="margin:0 0 8px">{{ page.title }}</h1>
+    <p class="mono muted" style="font-size:0.8rem;margin:0">
+      {{ page.date | date: "%B %d, %Y" }}
+      {% if page.machine %} · <span class="accent">{{ page.machine }}</span>{% endif %}
+    </p>
+  </header>
+
+  <div class="card writeup-content" style="margin-top:var(--space-3)">
+    {{ content }}
+  </div>
+
+  <footer style="margin-top:var(--space-4)">
+    {% if page.tags %}
+    <div class="row" style="gap:6px;flex-wrap:wrap">
+      {% for tag in page.tags %}<span class="badge">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+    <p style="margin-top:var(--space-3)"><a href="{{ '/writeups/' | relative_url }}">&larr; All Writeups</a></p>
+  </footer>
+</article>

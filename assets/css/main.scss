@@ -1,0 +1,86 @@
+---
+---
+// ─────────────────────────────────────────────
+// Main stylesheet — Jekyll SCSS entry point
+// The front-matter dashes above tell Jekyll to
+// process this file through Sass.
+// ─────────────────────────────────────────────
+
+@use "variables";
+@use "layout";
+@use "components";
+@use "animations";
+@use "utilities";
+
+// ── Reset ──
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--transition-medium), color var(--transition-medium);
+}
+
+a {
+  color: var(--accent);
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+  line-height: 1.2;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+pre {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  overflow-x: auto;
+  font-size: 0.875rem;
+}
+
+// ── Canvas background ──
+#graph-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+// ── Smooth scroll anchors ──
+html {
+  scroll-padding-top: 80px;
+}
+
+// ── Lead paragraph ──
+.lead {
+  font-size: var(--lead-size);
+  line-height: 1.6;
+  color: var(--text-muted);
+}

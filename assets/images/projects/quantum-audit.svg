@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360">
+  <rect width="560" height="360" fill="#111827"/>
+  <g stroke="#00FFC6" fill="none" stroke-width="1.2">
+    <polygon points="280,60 320,83 320,129 280,152 240,129 240,83" opacity=".7"/>
+    <polygon points="280,20 340,55 340,125 280,160 220,125 220,55" opacity=".4"/>
+    <polygon points="200,100 240,123 240,169 200,192 160,169 160,123" opacity=".3"/>
+    <polygon points="360,100 400,123 400,169 360,192 320,169 320,123" opacity=".3"/>
+    <polygon points="200,180 240,203 240,249 200,272 160,249 160,203" opacity=".2"/>
+    <polygon points="360,180 400,203 400,249 360,272 320,249 320,203" opacity=".2"/>
+    <polygon points="280,180 320,203 320,249 280,272 240,249 240,203" opacity=".5"/>
+    <line x1="280" y1="152" x2="240" y2="169" opacity=".3"/>
+    <line x1="280" y1="152" x2="320" y2="169" opacity=".3"/>
+    <line x1="280" y1="272" x2="240" y2="249" opacity=".2"/>
+    <line x1="280" y1="272" x2="320" y2="249" opacity=".2"/>
+  </g>
+  <circle cx="280" cy="106" r="3" fill="#00FFC6" opacity=".8"/>
+  <circle cx="280" cy="226" r="3" fill="#00FFC6" opacity=".6"/>
+</svg>

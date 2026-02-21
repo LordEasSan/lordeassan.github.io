@@ -1,0 +1,93 @@
+// ─────────────────────────────────────────────
+// Design Tokens — Dark-first, Hacker/Cyber
+// ─────────────────────────────────────────────
+
+// Dark mode is the DEFAULT — :root is dark
+:root {
+  // Backgrounds
+  --bg-primary:   #0B0F14;
+  --bg-secondary: #111827;
+  --bg-elevated:  #1A1F2E;
+
+  // Accent — cyber green + violet
+  --accent:       #00FFC6;
+  --accent-alt:   #6F42C1;
+  --accent-soft:  rgba(0, 255, 198, 0.08);
+  --accent-glow:  rgba(0, 255, 198, 0.25);
+
+  // Text
+  --text-primary: #E5E7EB;
+  --text-muted:   #94A3B8;
+  --text-heading: #F1F5F9;
+
+  // Borders & surfaces
+  --border-subtle: rgba(148, 163, 184, 0.08);
+  --glass:         rgba(255, 255, 255, 0.04);
+  --glass-border:  rgba(255, 255, 255, 0.06);
+
+  // Shadows (dark-optimised)
+  --shadow-xs: 0 2px 6px rgba(0, 0, 0, 0.30);
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.50);
+
+  // Canvas / graph colours
+  --graph-node:   rgba(0, 255, 198, 0.85);
+  --graph-edge:   rgba(0, 255, 198, 0.06);
+  --graph-glow:   rgba(0, 255, 198, 0.30);
+}
+
+// Light-mode override
+[data-theme="light"] {
+  --bg-primary:   #F9FAFB;
+  --bg-secondary: #FFFFFF;
+  --bg-elevated:  #F1F5F9;
+
+  --accent:       #0066FF;
+  --accent-alt:   #6F42C1;
+  --accent-soft:  rgba(0, 102, 255, 0.10);
+  --accent-glow:  rgba(0, 102, 255, 0.18);
+
+  --text-primary: #0F172A;
+  --text-muted:   #475569;
+  --text-heading: #020617;
+
+  --border-subtle: rgba(15, 23, 42, 0.06);
+  --glass:         rgba(255, 255, 255, 0.60);
+  --glass-border:  rgba(15, 23, 42, 0.08);
+
+  --shadow-xs: 0 2px 6px rgba(2, 6, 23, 0.04);
+  --shadow-sm: 0 6px 18px rgba(2, 6, 23, 0.06);
+  --shadow-lg: 0 20px 50px rgba(2, 6, 23, 0.12);
+
+  --graph-node: rgba(0, 102, 255, 0.60);
+  --graph-edge: rgba(0, 102, 255, 0.06);
+  --graph-glow: rgba(0, 102, 255, 0.20);
+}
+
+// ── Spacing & sizing tokens ──
+:root {
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+
+  --space-1:  8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  --max-width: 1100px;
+
+  --transition-fast:   150ms cubic-bezier(.4, 0, .2, 1);
+  --transition-medium: 280ms cubic-bezier(.16, .84, .44, 1);
+  --transition-slow:   500ms cubic-bezier(.16, .84, .44, 1);
+}
+
+// ── Typography tokens ──
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, Monaco, monospace;
+  --lead-size: 1.125rem;
+}

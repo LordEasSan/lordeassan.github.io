@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360">
+  <rect width="560" height="360" fill="#111827"/>
+  <g stroke="#00FFC6" fill="none" stroke-width="1.5">
+    <path d="M280,60 L380,110 L380,250 L280,310 L180,250 L180,110 Z" opacity=".6"/>
+    <path d="M280,90 L355,127 L355,233 L280,270 L205,233 L205,127 Z" opacity=".35"/>
+    <path d="M280,120 L330,144 L330,216 L280,240 L230,216 L230,144 Z" opacity=".2"/>
+  </g>
+  <line x1="280" y1="60" x2="280" y2="310" stroke="#00FFC6" stroke-width="1" opacity=".25"/>
+  <line x1="180" y1="180" x2="380" y2="180" stroke="#00FFC6" stroke-width="1" opacity=".15"/>
+  <g fill="#00FFC6">
+    <circle cx="280" cy="60" r="3" opacity=".7"/>
+    <circle cx="380" cy="110" r="2.5" opacity=".5"/>
+    <circle cx="380" cy="250" r="2.5" opacity=".5"/>
+    <circle cx="280" cy="310" r="3" opacity=".7"/>
+    <circle cx="180" cy="250" r="2.5" opacity=".5"/>
+    <circle cx="180" cy="110" r="2.5" opacity=".5"/>
+    <circle cx="280" cy="180" r="4" opacity=".8"/>
+  </g>
+</svg>

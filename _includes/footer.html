@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author | default: site.title }}. Built with Jekyll.</p>
+    {% if site.social %}
+    <p class="muted" style="margin-top:4px;font-size:0.8rem">
+      {% for link in site.social %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>{% unless forloop.last %} &middot; {% endunless %}
+      {% endfor %}
+    </p>
+    {% endif %}
+  </div>
+</footer>

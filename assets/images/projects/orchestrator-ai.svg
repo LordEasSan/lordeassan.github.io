@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360">
+  <rect width="560" height="360" fill="#111827"/>
+  <g stroke="#00FFC6" fill="none" stroke-width="1">
+    <line x1="160" y1="180" x2="260" y2="100" opacity=".4"/>
+    <line x1="160" y1="180" x2="260" y2="260" opacity=".4"/>
+    <line x1="260" y1="100" x2="360" y2="140" opacity=".4"/>
+    <line x1="260" y1="260" x2="360" y2="220" opacity=".4"/>
+    <line x1="360" y1="140" x2="460" y2="180" opacity=".4"/>
+    <line x1="360" y1="220" x2="460" y2="180" opacity=".4"/>
+    <line x1="260" y1="100" x2="360" y2="220" opacity=".15"/>
+    <line x1="260" y1="260" x2="360" y2="140" opacity=".15"/>
+  </g>
+  <g fill="#111827" stroke="#00FFC6" stroke-width="1.5">
+    <circle cx="160" cy="180" r="14" opacity=".7"/>
+    <circle cx="260" cy="100" r="12" opacity=".6"/>
+    <circle cx="260" cy="260" r="12" opacity=".6"/>
+    <circle cx="360" cy="140" r="12" opacity=".6"/>
+    <circle cx="360" cy="220" r="12" opacity=".6"/>
+    <circle cx="460" cy="180" r="14" opacity=".7"/>
+  </g>
+  <g fill="#00FFC6">
+    <circle cx="160" cy="180" r="4" opacity=".8"/>
+    <circle cx="260" cy="100" r="3" opacity=".5"/>
+    <circle cx="260" cy="260" r="3" opacity=".5"/>
+    <circle cx="360" cy="140" r="3" opacity=".5"/>
+    <circle cx="360" cy="220" r="3" opacity=".5"/>
+    <circle cx="460" cy="180" r="4" opacity=".8"/>
+  </g>
+</svg>

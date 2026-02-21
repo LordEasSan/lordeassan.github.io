@@ -1,0 +1,16 @@
+<header class="navbar">
+  <div class="container navbar-inner">
+    <div class="logo"><a href="{{ '/' | relative_url }}">{{ site.brand | default: 'AI_SEC' }}</a></div>
+    <div class="row" style="gap:4px">
+      <nav id="nav-list" class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
+        <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} class="active"{% endif %}>Projects</a>
+        <a href="{{ '/writeups/' | relative_url }}"{% if page.url contains '/writeups' %} class="active"{% endif %}>Writeups</a>
+        <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} class="active"{% endif %}>Blog</a>
+        <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active"{% endif %}>About</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">☀</button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    </div>
+  </div>
+</header>

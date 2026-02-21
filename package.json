@@ -1,0 +1,19 @@
+{
+  "name": "website-personale",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "bundle exec jekyll serve --livereload --drafts --open-url",
+    "build": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build:win": "set JEKYLL_ENV=production && bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean",
+    "image-opt": "node scripts/image-opt.js",
+    "lint:a11y": "npx pa11y-ci --config .pa11yci.json",
+    "format": "prettier --write \"assets/**/*.{scss,js}\" \"_includes/*.html\" \"_layouts/*.html\""
+  },
+  "devDependencies": {
+    "pa11y-ci": "^3.0.0",
+    "prettier": "^3.0.0",
+    "sharp": "^0.33.0"
+  }
+}

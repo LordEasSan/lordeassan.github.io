@@ -1,0 +1,72 @@
+- id: project-quantum
+  title: Quantum Audit
+  excerpt: "Static analysis toolkit and threat modeling framework for evaluating quantum-safe cryptographic implementations. Identifies post-quantum migration risks."
+  year: 2025
+  status: active
+  tags:
+    - security
+    - research
+    - tooling
+    - python
+  github: https://github.com/LordEasSan/quantum-audit
+  thumbnail: /assets/images/projects/quantum-audit.svg
+
+- id: project-orchestrator
+  title: Orchestrator AI
+  excerpt: "Lightweight orchestration layer for composing ML inference workflows. Supports DAG-based execution, model versioning, and multi-backend deployment."
+  year: 2025
+  status: active
+  tags:
+    - ai
+    - infra
+    - python
+  github: https://github.com/LordEasSan/orchestrator-ai
+  thumbnail: /assets/images/projects/orchestrator-ai.svg
+
+- id: project-eye
+  title: Eye on Security
+  excerpt: "Real-time anomaly detection dashboard combining statistical methods with ML classifiers. Automated alerting, SIEM integration, and forensic timeline export."
+  year: 2024
+  status: active
+  tags:
+    - security
+    - ml
+    - dashboard
+  github: https://github.com/LordEasSan/eye-on-security
+  thumbnail: /assets/images/projects/eye-on-security.svg
+
+- id: project-sigint
+  title: SigINT Scanner
+  excerpt: "Network traffic analysis tool for identifying suspicious patterns, DNS anomalies, and C2 beaconing behaviour using ensemble ML models."
+  year: 2024
+  status: completed
+  tags:
+    - security
+    - ml
+    - tooling
+  github: https://github.com/LordEasSan/sigint-scanner
+  thumbnail: /assets/images/projects/sigint-scanner.svg
+
+- id: project-diffguard
+  title: DiffGuard
+  excerpt: "Adversarial robustness testing framework for production ML models. Generates perturbation attacks and measures model resilience across input dimensions."
+  year: 2024
+  status: active
+  tags:
+    - ai
+    - security
+    - research
+  github: https://github.com/LordEasSan/diffguard
+  thumbnail: /assets/images/projects/diffguard.svg
+
+- id: project-infractl
+  title: InfraCTL
+  excerpt: "Infrastructure-as-code toolkit for deploying secure, isolated ML training environments. Supports Kubernetes, Podman, and bare-metal setups with zero-trust networking."
+  year: 2023
+  status: completed
+  tags:
+    - infra
+    - security
+    - devops
+  github: https://github.com/LordEasSan/infractl
+  thumbnail: /assets/images/projects/infractl.svg
