@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1030"/>
+      <stop offset="100%" stop-color="#0b0f14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#6F42C1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6F42C1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="90" fill="url(#glow)"/>
+  <!-- Pentacle shape (tarot) -->
+  <polygon points="200,45 218,100 275,100 228,132 244,188 200,155 156,188 172,132 125,100 182,100"
+           fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="200,60 214,102 262,102 222,128 236,176 200,152 164,176 178,128 138,102 186,102"
+           fill="none" stroke="#6F42C1" stroke-width="1" opacity="0.3"/>
+  <!-- Center symbol -->
+  <text x="200" y="128" text-anchor="middle" font-size="28" fill="#a78bfa" font-family="serif" opacity="0.7">⟡</text>
+  <!-- Label -->
+  <text x="200" y="215" text-anchor="middle" font-size="14" fill="#94A3B8" font-family="monospace" letter-spacing="2">MTPS</text>
+</svg>

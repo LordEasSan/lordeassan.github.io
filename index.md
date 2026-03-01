@@ -44,6 +44,27 @@ description: "AI Engineer · Security Mindset · Systems Thinking — Building i
 
 <section class="section">
   <div class="container">
+    <div class="mtps-banner card fade-in-up">
+      <div class="mtps-banner-inner">
+        <div class="mtps-banner-copy">
+          <span class="badge" style="background:rgba(111,66,193,0.15);color:#a78bfa;margin-bottom:8px">⟡ Live App</span>
+          <h2 style="margin:0 0 8px;font-size:1.35rem;color:var(--text-heading)">MTPS — Tarological System</h2>
+          <p class="muted" style="margin:0 0 var(--space-2);font-size:0.9rem;line-height:1.5">Esperienza interattiva di lettura tarologica con grafico dinamico. Framework formale per generazione parametrizzata di tarocchi con verifica LTL.</p>
+          <div class="row" style="gap:10px;flex-wrap:wrap">
+            <a class="btn primary" href="/tarological-system/" target="_blank" rel="noopener">Apri App ↗</a>
+            <a class="btn ghost" href="https://github.com/LordEasSan/tarological-system" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+        <div class="mtps-banner-visual" aria-hidden="true">
+          <div class="mtps-glyph">⟡</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     <div class="row" style="justify-content:space-between;align-items:center;flex-wrap:wrap">
       <h2 class="section-title" style="margin:0">Featured Projects</h2>
       <a class="btn ghost" href="{{ '/projects/' | relative_url }}" style="font-size:0.85rem">View all →</a>

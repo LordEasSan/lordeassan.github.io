@@ -369,3 +369,72 @@
 .diff-easy   { background: rgba(0, 200, 83, 0.12); color: #00c853; }
 .diff-medium { background: rgba(255, 152, 0, 0.12); color: #ff9800; }
 .diff-hard   { background: rgba(244, 67, 54, 0.12); color: #f44336; }
+
+// ── MTPS Banner ──
+.mtps-banner {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-elevated));
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  position: relative;
+}
+
+.mtps-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.mtps-banner-copy {
+  flex: 1;
+  min-width: 260px;
+}
+
+.mtps-banner-visual {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mtps-glyph {
+  font-size: 5rem;
+  line-height: 1;
+  opacity: 0.12;
+  color: var(--accent-alt);
+  animation: subtleBreathe 4s ease-in-out infinite;
+  user-select: none;
+}
+
+// ── Navbar MTPS link ──
+.nav-mtps {
+  color: var(--accent-alt) !important;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(111, 66, 193, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px !important;
+  transition: all var(--transition-fast);
+
+  &:hover {
+    background: rgba(111, 66, 193, 0.12);
+    border-color: var(--accent-alt);
+    color: var(--accent-alt) !important;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 600px) {
+  .mtps-banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mtps-banner-visual {
+    display: none;
+  }
+  .mtps-banner-copy .row {
+    justify-content: center;
+  }
+}

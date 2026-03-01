@@ -1,3 +1,17 @@
+- id: project-mtps
+  title: "MTPS — Tarological System"
+  excerpt: "Esperienza interattiva di lettura tarologica con grafico dinamico. Framework formale per generazione parametrizzata di tarocchi, sintesi narrativa e verifica temporale LTL."
+  year: 2026
+  status: active
+  tags:
+    - react
+    - typescript
+    - ai
+    - webapp
+  github: https://github.com/LordEasSan/tarological-system
+  live: https://lordeassan.github.io/tarological-system/
+  thumbnail: /assets/images/projects/mtps.svg
+
 - id: project-quantum
   title: Quantum Audit
   excerpt: "Static analysis toolkit and threat modeling framework for evaluating quantum-safe cryptographic implementations. Identifies post-quantum migration risks."
