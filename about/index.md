@@ -24,7 +24,7 @@ description: "About Alessandro Bragetti — SAP developer since 2020: ABAP on SA
     {%- for job in pr.experience %}
     <li class="timeline-item{% if job.current %} is-current{% endif %}">
       <p class="timeline-date"><time datetime="{{ job.start_iso }}">{{ job.start }}</time> – {% if job.end_iso %}<time datetime="{{ job.end_iso }}">{{ job.end }}</time>{% else %}{{ job.end }}{% endif %}</p>
-      <h3>{{ job.role }} <span class="timeline-company">· {{ job.company }}</span></h3>
+      <h3>{{ job.role }} <span class="timeline-company">· {{ job.company }}{% if job.level %} · {{ job.level }}{% endif %}</span></h3>
       <p class="muted">{{ job.summary }}</p>
       <ul class="timeline-highlights">
         {%- for h in job.highlights %}<li>{{ h }}</li>{% endfor %}

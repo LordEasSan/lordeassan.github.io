@@ -33,6 +33,7 @@ experience:
   - id: accenture
     role: "SAP BTP / Full Stack Developer"
     company: "Accenture"
+    level: "Analyst"          # official career level; functional role above
     start: "May 2025"
     start_iso: "2025-05"
     end: "Present"
