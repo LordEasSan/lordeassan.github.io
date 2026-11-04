@@ -25,3 +25,9 @@ Thumbs.db
 npm-debug.log
 *.local
 gh-pages/
+
+# Private documentation - NEVER commit (public repository).
+docs/career/
+docs/chatgpt-continuity/
+docs/audits/
+docs/architecture/design-decisions.md

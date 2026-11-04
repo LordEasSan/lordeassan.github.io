@@ -1,17 +1,18 @@
 # ─── Site Settings ───
-title: "AI_SEC"
+# Professional facts (name, headline, experience, contacts) live in
+# _data/profile.yml; SEO tags are rendered by _includes/seo.html.
+title: "Alessandro Bragetti"
 author: "Alessandro Bragetti"
 email: "alessandro.bragetti17@gmail.com"
-description: "AI Engineer · Security Mindset · Systems Thinking"
-role: "AI Engineer & Security Researcher"
-brand: "AI_SEC"
+description: "Alessandro Bragetti — SAP BTP & Full Stack Developer (SAP CAP, Node.js, SAPUI5/Fiori, OData, SAP Integration Suite). Also exploring AI engineering and cybersecurity."
+brand: "AI_SEC"          # logo mark in the navbar (kept from the original identity)
+lang: en
 baseurl: ""
 url: "https://lordeassan.github.io"
 
-# OG image
 og_image: "/assets/images/og-default.png"
 
-# Social links (used in footer + JSON-LD)
+# Kept for backwards compatibility; footer/JSON-LD now read _data/profile.yml.
 social:
   - name: GitHub
     url: "https://github.com/LordEasSan"
@@ -23,7 +24,6 @@ social:
 # ─── Build Settings ───
 theme: null
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
 
@@ -33,6 +33,11 @@ highlighter: rouge
 sass:
   sass_dir: assets/css
   style: compressed
+  sourcemap: never
+
+feed:
+  collections:
+    - posts
 
 # ─── Collections ───
 collections:
@@ -60,17 +65,24 @@ defaults:
       layout: default
 
 # ─── Excludes ───
+# docs/ holds internal documentation (docs/career and docs/chatgpt-continuity
+# are also git-ignored). The original full-resolution photo is not published;
+# the site serves the resized assets/images/profile-*.{webp,jpg}.
 exclude:
   - node_modules
   - package.json
   - package-lock.json
+  - Gemfile
   - Gemfile.lock
   - DEVELOPMENT.md
   - README.md
   - scripts
   - .github
   - .pa11yci.json
+  - docs
+  - assets/images/profile.jpg
+  - assets/images/source
 
 # ─── Dev Settings ───
+# Drafts are shown only via `npm run dev` (--drafts), never in production.
 livereload: true
-show_drafts: true
