@@ -1,6 +1,8 @@
-﻿# Website Personale — AI_SEC
+# Website Personale — Alessandro Bragetti (AI_SEC)
 
-Personal portfolio website built with **Jekyll** — dark-first, hacker/cybersecurity aesthetic with bio-inspired animated background.
+Personal portfolio of an SAP BTP & Full Stack Developer, built with **Jekyll**. Dark-first, with a graph-inspired animated background; AI engineering and cybersecurity are kept as research and learning tracks.
+
+Professional facts live in `_data/profile.yml`, projects in `_data/projects.yml`, certifications in `_data/certifications.yml`. Architecture notes: `docs/architecture/current-state.md`.
 
 ## Quick Start
 
@@ -29,11 +31,11 @@ Dev server runs at `http://localhost:4000` with auto-refresh.
 - Bio-inspired animated canvas background
 - Glassmorphism navbar
 - Project filtering by tags
-- WCAG 2.2 AA accessible
-- SEO: OpenGraph, JSON-LD, sitemap, canonical URLs
+- Accessibility: targets WCAG 2.2 AA; automated checks only (Lighthouse, W3C Nu validator, `scripts/check_site.py`), no conformance claim
+- SEO: one `_includes/seo.html` (title, canonical, OpenGraph, JSON-LD Person/ProfilePage), sitemap, feed
 - Responsive & mobile-first
-- GitHub Actions CI/CD with a11y testing
-- PR preview deployments
+- GitHub Actions build + deploy to Pages (no automated tests in CI yet)
+- Local QA: `python -I scripts/check_site.py _site`
 
 ## Build for Production
 
