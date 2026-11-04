@@ -1,89 +1,96 @@
 ---
 layout: default
 title: Home
-description: "AI Engineer · Security Mindset · Systems Thinking — Building intelligent, secure, and scalable systems."
+description: "Alessandro Bragetti — SAP BTP & Full Stack Developer at Accenture: SAP CAP, Node.js, CDS, SAPUI5/Fiori, OData and SAP Integration Suite. Also exploring AI engineering and cybersecurity."
 ---
+{%- assign pr = site.data.profile -%}
 
-<section class="hero">
+<section class="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy fade-in">
-      <p class="mono accent" style="margin:0 0 8px;font-size:0.85rem">> hello_world</p>
-      <h1>Building <span class="accent">Intelligent</span> Systems</h1>
-      <p class="lead">AI Engineer &amp; Security Researcher. I design systems that think, defend, and scale — with a security-first mindset and a passion for what's next.</p>
-      <div class="row" style="margin-top:var(--space-3);gap:12px;flex-wrap:wrap">
-        <a class="btn primary" href="{{ '/projects/' | relative_url }}">View Projects</a>
-        <a class="btn ghost" href="{{ '/about/' | relative_url }}">About Me</a>
-        <a class="btn ghost" href="{{ '/blog/' | relative_url }}">Read Blog</a>
+      <p class="mono accent hero-prompt">&gt; hello_world</p>
+      <h1 id="hero-title"><span class="accent">SAP BTP</span> &amp; Full Stack Developer</h1>
+      <p class="hero-secondary mono">{{ pr.secondary }}</p>
+      <p class="lead">{{ pr.intro }}</p>
+      <div class="row hero-actions">
+        <a class="btn primary" href="{{ '/about/#experience' | relative_url }}">Experience</a>
+        <a class="btn ghost" href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a class="btn ghost" href="{{ pr.contact.linkedin }}" rel="noopener me">LinkedIn</a>
       </div>
     </div>
-    <div class="photo-frame fade-in" style="animation-delay:200ms">
-      <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile photo" loading="eager" width="200" height="200" fetchpriority="high">
+    <div class="fade-in hero-photo">
+      {% include profile-photo.html size=200 eager=true %}
+      <p class="hero-name">{{ pr.name }}</p>
+      <p class="mono muted hero-meta">Based in {{ pr.location }}</p>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Core Focus Areas</h2>
-    <div class="features-grid stagger">
-      <div class="feature-card">
-        <h3><span class="accent">◈</span> AI Engineering</h3>
-        <p class="muted">Designing and deploying ML pipelines, orchestration layers, and intelligent automation systems.</p>
-      </div>
-      <div class="feature-card">
-        <h3><span class="accent">◈</span> Security Architecture</h3>
-        <p class="muted">Threat modeling, static analysis, and building systems that are secure by design.</p>
-      </div>
-      <div class="feature-card">
-        <h3><span class="accent">◈</span> Systems Thinking</h3>
-        <p class="muted">Scalable architectures, performance optimization, and infrastructure that grows with the mission.</p>
-      </div>
+<section class="section" aria-labelledby="path-title">
+  <h2 id="path-title" class="section-title">Career path</h2>
+  <ol class="career-path">
+    {%- for step in pr.path %}
+    <li class="career-step{% if forloop.last %} is-current{% endif %}">
+      <span class="career-years mono">{{ step.years }}</span>
+      <span class="career-label">{{ step.label }}</span>
+    </li>
+    {%- endfor %}
+  </ol>
+  <p class="muted path-note">From ABAP on SAP ERP/ECC, through SAP BTP and integration work, to full-stack development on SAP BTP. <a href="{{ '/about/#experience' | relative_url }}">Full timeline →</a></p>
+</section>
+
+<section class="section" aria-labelledby="focus-title">
+  <h2 id="focus-title" class="section-title">What I work on</h2>
+  <div class="focus-grid">
+    <div class="focus-item">
+      <p class="focus-kind mono">Professional</p>
+      <h3>Enterprise SAP development</h3>
+      <p class="muted">CAP and Node.js services with CDS models, SAPUI5/Fiori interfaces, REST and OData APIs, SAP S/4HANA integration and Cloud Foundry deployment. Before that: SAP Integration Suite, API Management, PI/PO migrations and ABAP on ERP/ECC.</p>
+    </div>
+    <div class="focus-item">
+      <p class="focus-kind mono">Research &amp; experiments</p>
+      <h3>AI engineering &amp; intelligent systems</h3>
+      <p class="muted">Personal experiments and writing on AI-assisted development, adversarial robustness and secure ML pipelines, plus the <a href="{{ '/projects/#experiment' | relative_url }}">MTPS</a> formal-methods experiment.</p>
+    </div>
+    <div class="focus-item">
+      <p class="focus-kind mono">Learning &amp; practice</p>
+      <h3>Cybersecurity &amp; systems thinking</h3>
+      <p class="muted">Networking and Linux fundamentals, Cisco NetAcad training and hands-on lab <a href="{{ '/writeups/' | relative_url }}">CTF writeups</a> from HackTheBox and TryHackMe.</p>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="mtps-banner card fade-in-up">
-      <div class="mtps-banner-inner">
-        <div class="mtps-banner-copy">
-          <span class="badge" style="background:rgba(111,66,193,0.15);color:#a78bfa;margin-bottom:8px">⟡ Live App</span>
-          <h2 style="margin:0 0 8px;font-size:1.35rem;color:var(--text-heading)">MTPS — Tarological System</h2>
-          <p class="muted" style="margin:0 0 var(--space-2);font-size:0.9rem;line-height:1.5">Esperienza interattiva di lettura tarologica con grafico dinamico. Framework formale per generazione parametrizzata di tarocchi con verifica LTL.</p>
-          <div class="row" style="gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="/tarological-system/" target="_blank" rel="noopener">Apri App ↗</a>
-            <a class="btn ghost" href="https://github.com/LordEasSan/tarological-system" target="_blank" rel="noopener">Source Code</a>
-          </div>
-        </div>
-        <div class="mtps-banner-visual" aria-hidden="true">
-          <div class="mtps-glyph">⟡</div>
-        </div>
-      </div>
-    </div>
+<section class="section" aria-labelledby="work-title">
+  <div class="row section-head">
+    <h2 id="work-title" class="section-title">Selected work</h2>
+    <a class="btn ghost btn-sm" href="{{ '/projects/' | relative_url }}">All projects →</a>
+  </div>
+  {%- assign featured = site.data.projects | where: "visibility", "public" | where: "featured", true %}
+  <div class="projects-grid">
+    {%- for p in featured limit:3 %}
+      {% include project-card.html project=p %}
+    {%- endfor %}
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="row" style="justify-content:space-between;align-items:center;flex-wrap:wrap">
-      <h2 class="section-title" style="margin:0">Featured Projects</h2>
-      <a class="btn ghost" href="{{ '/projects/' | relative_url }}" style="font-size:0.85rem">View all →</a>
-    </div>
-    <div class="projects-grid stagger" style="margin-top:var(--space-3)">
-      {% for p in site.data.projects limit:3 %}
-      <article class="project-card card">
-        <div class="project-thumb">
-          <img src="{{ p.thumbnail }}" alt="{{ p.title }}" loading="lazy">
-        </div>
-        <div class="project-body">
-          <h3><a href="{{ p.github }}" target="_blank" rel="noopener">{{ p.title }}</a></h3>
-          <p>{{ p.excerpt }}</p>
-          <div class="row" style="margin-top:8px;gap:6px;flex-wrap:wrap">
-            {% for tag in p.tags %}<span class="badge">{{ tag }}</span>{% endfor %}
-          </div>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
+<section class="section" aria-labelledby="writing-title">
+  <div class="row section-head">
+    <h2 id="writing-title" class="section-title">Writing</h2>
+    <a class="btn ghost btn-sm" href="{{ '/blog/' | relative_url }}">Blog →</a>
   </div>
+  <ul class="post-list">
+    {%- for post in site.posts limit:2 %}
+    <li class="post-item">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <div class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time> · Blog</div>
+    </li>
+    {%- endfor %}
+    {%- assign latest_w = site.writeups | sort: 'date' | reverse | first %}
+    {%- if latest_w %}
+    <li class="post-item">
+      <a href="{{ latest_w.url | relative_url }}">{{ latest_w.title }}</a>
+      <div class="post-meta"><time datetime="{{ latest_w.date | date_to_xmlschema }}">{{ latest_w.date | date: "%B %d, %Y" }}</time> · CTF writeup</div>
+    </li>
+    {%- endif %}
+  </ul>
 </section>

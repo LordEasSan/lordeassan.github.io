@@ -1,0 +1,11 @@
+{%- comment -%} Usage: {% include profile-photo.html size=200 eager=true %} {%- endcomment -%}
+{%- assign s = include.size | default: 200 -%}
+<div class="photo-frame" style="width:{{ s }}px;height:{{ s }}px">
+  <picture>
+    <source type="image/webp" srcset="{{ '/assets/images/profile-200.webp' | relative_url }} 200w, {{ '/assets/images/profile-400.webp' | relative_url }} 400w" sizes="{{ s }}px">
+    <img src="{{ '/assets/images/profile-400.jpg' | relative_url }}"
+         srcset="{{ '/assets/images/profile-200.jpg' | relative_url }} 200w, {{ '/assets/images/profile-400.jpg' | relative_url }} 400w" sizes="{{ s }}px"
+         alt="Portrait of {{ site.data.profile.name }}" width="{{ s }}" height="{{ s }}"
+         {% if include.eager %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+  </picture>
+</div>

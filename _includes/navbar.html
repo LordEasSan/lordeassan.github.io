@@ -1,17 +1,23 @@
+{%- assign nav = "Home|/,About|/about/,Projects|/projects/,Certifications|/certifications/,Writeups|/writeups/,Blog|/blog/" | split: "," -%}
 <header class="navbar">
   <div class="container navbar-inner">
-    <div class="logo"><a href="{{ '/' | relative_url }}">{{ site.brand | default: 'AI_SEC' }}</a></div>
-    <div class="row" style="gap:4px">
-      <nav id="nav-list" class="nav-links" role="navigation" aria-label="Main navigation">
-        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
-        <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} class="active"{% endif %}>Projects</a>
-        <a href="{{ '/writeups/' | relative_url }}"{% if page.url contains '/writeups' %} class="active"{% endif %}>Writeups</a>
-        <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} class="active"{% endif %}>Blog</a>
-        <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active"{% endif %}>About</a>
-        <a href="/tarological-system/" class="nav-mtps" target="_blank" rel="noopener">MTPS ↗</a>
+    <div class="logo"><a href="{{ '/' | relative_url }}" aria-label="{{ site.data.profile.name }} — home">{{ site.brand | default: 'AI_SEC' }}</a></div>
+    <div class="row nav-actions">
+      <nav id="nav-list" class="nav-links" aria-label="Main navigation">
+        {%- for item in nav -%}
+          {%- assign parts = item | split: "|" -%}
+          {%- assign href = parts[1] -%}
+          {%- if href == '/' -%}
+            {%- if page.url == '/' -%}{%- assign active = true -%}{%- else -%}{%- assign active = false -%}{%- endif -%}
+          {%- else -%}
+            {%- if page.url contains href -%}{%- assign active = true -%}{%- else -%}{%- assign active = false -%}{%- endif -%}
+          {%- endif %}
+        <a href="{{ href | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ parts[0] }}</a>
+        {%- endfor %}
+        <a href="/tarological-system/" class="nav-mtps" target="_blank" rel="noopener">MTPS <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </nav>
-      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">☀</button>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle colour theme">☀</button>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
     </div>
   </div>
 </header>

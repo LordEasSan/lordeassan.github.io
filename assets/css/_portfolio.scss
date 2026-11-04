@@ -1,0 +1,151 @@
+// ─────────────────────────────────────────────
+// Portfolio components (2026-11 career update).
+// Loaded last in main.scss so it can refine earlier rules.
+// Restraint: hierarchy and spacing first; accent used sparingly.
+// ─────────────────────────────────────────────
+
+:root { --on-accent: #0B0F14; --border-strong: rgba(148, 163, 184, 0.22); }
+[data-theme="light"] { --on-accent: #FFFFFF; --border-strong: rgba(15, 23, 42, 0.16); }
+
+[hidden] { display: none !important; }
+
+// ── Buttons: contrast fix ──
+// Before: white text on a #00FFC6→violet gradient (~1.3:1 on the green end).
+// After: solid accent with theme-aware text (dark: ~14:1, light: ~5:1).
+.btn.primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: none;
+  &:hover { color: var(--on-accent); box-shadow: 0 4px 16px var(--accent-glow); }
+}
+.btn.ghost { border-color: var(--border-strong); }
+.btn-sm { padding: 8px 14px; font-size: 0.85rem; min-height: 40px; }
+.filter-bar { flex-wrap: wrap; gap: 8px; margin: var(--space-3) 0 var(--space-2); }
+.filter-bar button[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.count { color: var(--text-muted); font-size: 0.8em; }
+
+// ── Hero ──
+.hero { padding: var(--space-5) 0 var(--space-4); }
+.hero-inner { justify-content: space-between; }
+.hero-copy { max-width: 640px; }
+.hero-prompt { margin: 0 0 8px; font-size: 0.85rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; margin-bottom: var(--space-1); }
+.hero-secondary { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 var(--space-3); }
+.hero-actions { margin-top: var(--space-3); gap: 12px; flex-wrap: wrap; }
+.hero-photo { text-align: center; }
+.hero-photo .photo-frame { margin: 0 auto; }
+.hero-name { margin: var(--space-2) 0 0; font-weight: 700; color: var(--text-heading); }
+.hero-meta { margin: 2px 0 0; font-size: 0.8rem; }
+.photo-frame picture, .photo-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.section-head { justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: var(--space-3); }
+.section-head .section-title { margin: 0; }
+.page-intro { max-width: 640px; }
+.group-intro { margin: calc(-1 * var(--space-2)) 0 var(--space-3); font-size: 0.9rem; }
+.small-note { font-size: 0.85rem; margin-top: var(--space-3); }
+
+// ── Career path (graph-like: nodes joined by an edge) ──
+.career-path {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2);
+  position: relative;
+}
+.career-path::before {
+  content: ""; position: absolute; left: 6px; right: 6px; top: 6px; height: 2px;
+  background: var(--border-strong);
+}
+.career-step { position: relative; padding-top: var(--space-3); }
+.career-step::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg-primary); border: 2px solid var(--text-muted);
+}
+.career-step.is-current::before { border-color: var(--accent); background: var(--accent); }
+.career-years { display: block; font-size: 0.78rem; color: var(--text-muted); }
+.career-label { display: block; font-weight: 600; color: var(--text-heading); margin-top: 2px; }
+.path-note { margin-top: var(--space-3); font-size: 0.9rem; }
+
+// ── Focus areas: three columns separated by rules, not glowing cards ──
+.focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.focus-item { border-top: 2px solid var(--border-strong); padding-top: var(--space-2); }
+.focus-item:first-child { border-top-color: var(--accent); }
+.focus-item h3 { margin: 4px 0 8px; font-size: 1.05rem; }
+.focus-item p { margin: 0; font-size: 0.92rem; line-height: 1.6; }
+.focus-kind { margin: 0; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+
+// ── Project cards ──
+.project-card { display: flex; flex-direction: column; gap: var(--space-2); }
+.project-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.project-kicker { margin: 0 0 4px; font-size: 0.72rem; color: var(--text-muted); }
+.kicker-cat { color: var(--accent); }
+.tag-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.project-links { margin: 10px 0 0; font-size: 0.85rem; }
+.project-group { margin-top: var(--space-5); scroll-margin-top: 90px; }
+
+// ── About ──
+.about-intro { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: flex-start; margin-top: var(--space-3); }
+.about-intro > div:last-child { flex: 1; min-width: 260px; }
+.about-intro .lead { margin-top: 0; }
+#experience, #contact { scroll-margin-top: 90px; }
+
+ol.timeline { list-style: none; margin: 0; }
+.timeline-item h3 { margin: 0 0 4px; font-size: 1.1rem; }
+.timeline-company { color: var(--text-muted); font-weight: 600; }
+.timeline-item.is-current::before { box-shadow: 0 0 0 4px var(--accent-soft); }
+.timeline-highlights { margin: 8px 0 0; padding-left: 1.1em; font-size: 0.92rem; line-height: 1.6; }
+.timeline-highlights li { margin-bottom: 4px; }
+.timeline-highlights li::marker { color: var(--accent); }
+
+.skills-groups { display: flex; flex-direction: column; gap: var(--space-3); }
+.skills-heading { font-size: 0.8rem; color: var(--text-muted); margin: 0 0 8px; font-weight: 600; }
+.facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); }
+.facts-grid p { margin: 0 0 8px; }
+.plain-list { list-style: none; margin: 0 0 8px; padding: 0; }
+.plain-list li { margin-bottom: 6px; }
+.approach-list { padding-left: 1.1em; line-height: 1.65; }
+.approach-list li { margin-bottom: 10px; }
+.approach-list li::marker { color: var(--accent); }
+.contact-card { text-align: center; padding: var(--space-4); }
+.contact-card .section-title { margin-bottom: var(--space-2); }
+.contact-actions { justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: var(--space-3); }
+
+// ── Certifications ──
+.cert-group { margin-top: var(--space-5); }
+.cert-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.cert-item { border-left: 2px solid var(--border-strong); padding-left: var(--space-2); }
+.cert-group:first-of-type .cert-item { border-left-color: var(--accent); }
+.cert-title { margin: 0; font-size: 1.05rem; }
+.cert-sub { margin: 2px 0 0; color: var(--text-primary); }
+.cert-detail { margin: 4px 0 0; font-size: 0.85rem; }
+.cert-meta { margin: 4px 0 0; font-size: 0.78rem; }
+
+// ── Writeup platform colours (theme-aware, AA contrast) ──
+:root { --htb: #9FF300; --thm: #FF7A7A; }
+[data-theme="light"] { --htb: #3F6B00; --thm: #B91C1C; }
+.plat-htb { color: var(--htb); font-weight: 700; }
+.plat-thm { color: var(--thm); font-weight: 700; }
+.badge-htb { color: var(--htb); background: color-mix(in srgb, var(--htb) 12%, transparent); }
+.badge-thm { color: var(--thm); background: color-mix(in srgb, var(--thm) 12%, transparent); }
+
+// ── Nav / footer ──
+.nav-actions { gap: 4px; }
+.footer-links { margin-top: 4px; font-size: 0.8rem; }
+.nav-links a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }
+
+// ── Responsive ──
+@media (max-width: 900px) {
+  .focus-grid { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+@media (max-width: 640px) {
+  .hero-inner { flex-direction: column-reverse; align-items: flex-start; }
+  .hero-photo { text-align: left; display: flex; align-items: center; gap: var(--space-2); }
+  .hero-photo .photo-frame { width: 96px !important; height: 96px !important; margin: 0; }
+  .hero-name { margin: 0; }
+  .career-path { grid-template-columns: 1fr; gap: var(--space-2); padding-left: var(--space-3); }
+  .career-path::before { left: 6px; right: auto; top: 6px; bottom: 6px; width: 2px; height: auto; }
+  .career-step { padding-top: 0; }
+  .career-step::before { left: calc(-1 * var(--space-3)); top: 4px; }
+}

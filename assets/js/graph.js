@@ -18,13 +18,16 @@
   var canvas = document.getElementById('graph-bg');
   if (!canvas || !canvas.getContext) return;
 
-  // Respect reduced-motion
+  // Respect reduced-motion and data-saver preferences.
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (reduceMotion.matches) return;
+  if (navigator.connection && navigator.connection.saveData) return;
 
   var ctx = canvas.getContext('2d');
   var nodes = [];
-  var NODE_COUNT = 50;
+  // Fewer nodes on small screens: edge drawing is O(n²) and mobile CPUs are
+  // what Lighthouse measured as main-thread blocking time.
+  var NODE_COUNT = window.innerWidth < 768 ? 24 : 50;
   var EDGE_THRESHOLD = 140;
   var MOUSE_RADIUS = 180;
   var MOUSE_REPULSION = 0.8;
@@ -185,14 +188,25 @@
     mouse = null;
   });
 
-  // Init
-  window.addEventListener('resize', resize);
-  resize();
-  initNodes();
-  draw();
+  // Init — after the page is interactive, so the animation never competes
+  // with first render (requestIdleCallback where available).
+  var started = false;
+  function start() {
+    started = true;
+    window.addEventListener('resize', resize);
+    resize();
+    initNodes();
+    draw();
+  }
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(start, { timeout: 2000 });
+  } else {
+    window.setTimeout(start, 600);
+  }
 
   // Pause when tab hidden
   document.addEventListener('visibilitychange', function () {
+    if (!started) return;
     if (document.hidden) {
       cancelAnimationFrame(animId);
     } else {
@@ -202,6 +216,7 @@
 
   // Re-check reduced motion
   reduceMotion.addEventListener('change', function (e) {
+    if (!started) return;
     if (e.matches) {
       cancelAnimationFrame(animId);
       ctx.clearRect(0, 0, canvas.width, canvas.height);

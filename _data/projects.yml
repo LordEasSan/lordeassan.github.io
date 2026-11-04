@@ -1,86 +1,217 @@
+# ─────────────────────────────────────────────────────────────
+# projects.yml — portfolio data model.
+#
+#   category    professional | personal | experiment | open-source |
+#               learning | research | archived
+#   status      active | completed | archived | unknown
+#   visibility  public  = rendered
+#               review  = NOT rendered; needs owner confirmation
+#   featured    true    = eligible for the homepage "Selected work"
+#   disclosure  (professional only) what may be shown publicly
+#   evidence    where the description comes from (not rendered)
+#   github/live optional links — only real, reachable URLs
+# ─────────────────────────────────────────────────────────────
+
+# ── Professional (generalized case studies — no client code, data or names)
+- id: sap-integration-monitor
+  title: "Integration Monitoring App"
+  category: professional
+  context: "IDGFAB S.r.l. · SAP BTP Consultant"
+  excerpt: "SAP Fiori application that combines data from SAP and SAP Integration Suite to monitor interfaces: it shows whether a failure originates on the SAP side or in Integration Suite, and keeps an error history."
+  tags: [sap-fiori, integration-suite, monitoring]
+  status: completed
+  visibility: public
+  featured: true
+  disclosure: "Functional description only, as stated in my CV. No client names, code, architecture details or data."
+  evidence: "Original CV — Fiori Solutions #1 (MFC)."
+
+- id: sap-calendar-app
+  title: "Business Calendar App"
+  category: professional
+  context: "IDGFAB S.r.l. · SAP BTP Consultant"
+  excerpt: "SAP Fiori-style application, inspired by Google Calendar, for managing business appointments."
+  tags: [sap-fiori, sapui5]
+  status: completed
+  visibility: public
+  featured: true
+  disclosure: "Functional description only, as stated in my CV."
+  evidence: "Original CV — Fiori Solutions #2 (Calendar App)."
+
+# ── Personal projects & experiments
 - id: project-mtps
   title: "MTPS — Tarological System"
-  excerpt: "Esperienza interattiva di lettura tarologica con grafico dinamico. Framework formale per generazione parametrizzata di tarocchi, sintesi narrativa e verifica temporale LTL."
+  category: experiment
+  excerpt: "Interactive tarot-reading web experience with a dynamic graph: an experimental formal framework for parameterized card generation, narrative synthesis and LTL temporal verification."
   year: 2026
   status: active
-  tags:
-    - react
-    - typescript
-    - ai
-    - webapp
+  tags: [typescript, react, formal-methods, experiment]
   github: https://github.com/LordEasSan/tarological-system
   live: https://lordeassan.github.io/tarological-system/
   thumbnail: /assets/images/projects/mtps.svg
+  visibility: public
+  featured: true
+  evidence: "Repo exists (TypeScript, GitHub API 2026-11-04); live app returns 200. Italian description translated."
 
+- id: opengoal-contrib
+  title: "OpenGOAL — Jak 3 bug investigation"
+  category: open-source
+  excerpt: "Investigation workspace for an open-source game-engine port (open-goal/jak-project): reproducible test scripts, log parsing and evidence reports for a traffic-entity bug (issue #4034)."
+  year: 2026
+  status: active
+  tags: [powershell, debugging, open-source]
+  github: https://github.com/LordEasSan/opengoal-contrib
+  visibility: review
+  review_note: "Repo is PUBLIC but its README is titled 'opengoal-contrib-private — Private contribution workspace'. Confirm it is meant to be public before featuring it."
+  evidence: "Repo README (GitHub, 2026-11-04). Contribution status upstream not verified."
+
+# ── Learning & practice (public repositories)
+- id: cap-step-by-step
+  title: "CAP Project — step by step"
+  category: learning
+  excerpt: "SAP Cloud Application Programming Model project following the standard db/srv layout."
+  year: 2023
+  status: archived
+  tags: [sap-cap, cds]
+  github: https://github.com/LordEasSan/Cap_Project_Stepbystep
+  visibility: public
+  evidence: "Repo (CAP CDS, 2023-01)."
+
+- id: images-gallery
+  title: "Images Gallery"
+  category: learning
+  excerpt: "Full-stack image gallery: React frontend with a Python Flask API."
+  year: 2022
+  status: archived
+  tags: [react, python, flask]
+  github: https://github.com/LordEasSan/images-gallery
+  visibility: public
+  evidence: "Repo description (GitHub API)."
+
+- id: python-rabbitmq
+  title: "Python & RabbitMQ"
+  category: learning
+  excerpt: "Messaging exercises with Python and RabbitMQ."
+  year: 2022
+  status: archived
+  tags: [python, rabbitmq]
+  github: https://github.com/LordEasSan/Python_and_RabbitMQ
+  visibility: public
+  evidence: "Repo; matches the Python 3.10 course on the CV."
+
+- id: python-mongodb
+  title: "Python & MongoDB"
+  category: learning
+  excerpt: "Persistence exercises with Python and MongoDB."
+  year: 2022
+  status: archived
+  tags: [python, mongodb]
+  github: https://github.com/LordEasSan/Python_and_MongoDB
+  visibility: public
+  evidence: "Repo; matches the Python 3.10 course on the CV."
+
+- id: python-algorithms
+  title: "Python Algorithms"
+  category: learning
+  excerpt: "Algorithm and data-structure implementations in Python."
+  year: 2022
+  status: archived
+  tags: [python, algorithms]
+  github: https://github.com/LordEasSan/Python_Algorithms
+  visibility: public
+  evidence: "Repo; matches the DSA courses on the CV."
+
+- id: code-wars
+  title: "Codewars katas"
+  category: learning
+  excerpt: "Solutions to Codewars programming exercises."
+  year: 2022
+  status: archived
+  tags: [python, practice]
+  github: https://github.com/LordEasSan/Code_Wars
+  visibility: public
+  evidence: "Repo name/language (GitHub API)."
+
+# ── NEEDS REVIEW — not rendered ─────────────────────────────────
+# SAP repos that may contain employer/training material: confirm before linking.
+- id: mfc-cap-repo
+  title: "MFC-CAP (repository)"
+  category: professional
+  github: https://github.com/LordEasSan/MFC-CAP
+  visibility: review
+  review_note: "Public repo (CAP, mta.yaml, Jenkinsfile, created 2023-01-12 — before the IDGFAB start 03/2023). Confirm it contains no employer/client material before linking."
+
+- id: mfc-fiori-repo
+  title: "MFC Fiori project (repository)"
+  category: learning
+  github: https://github.com/LordEasSan/MFC_Project_per_Gio
+  visibility: review
+  review_note: "Fiori freestyle app generated in BAS against the public Northwind service (Dec 2022). Confirm purpose/ownership before linking."
+
+# Listed on the previous site version. Each GitHub link returned 404 on
+# 2026-11-04 (github.com + GitHub API). Content kept verbatim, hidden until
+# confirmed: publish the repo, fix the link, or delete the entry.
 - id: project-quantum
   title: Quantum Audit
   excerpt: "Static analysis toolkit and threat modeling framework for evaluating quantum-safe cryptographic implementations. Identifies post-quantum migration risks."
   year: 2025
-  status: active
-  tags:
-    - security
-    - research
-    - tooling
-    - python
+  status: unknown
+  tags: [security, research, tooling, python]
   github: https://github.com/LordEasSan/quantum-audit
   thumbnail: /assets/images/projects/quantum-audit.svg
+  visibility: review
+  review_note: "Repo 404."
 
 - id: project-orchestrator
   title: Orchestrator AI
   excerpt: "Lightweight orchestration layer for composing ML inference workflows. Supports DAG-based execution, model versioning, and multi-backend deployment."
   year: 2025
-  status: active
-  tags:
-    - ai
-    - infra
-    - python
+  status: unknown
+  tags: [ai, infra, python]
   github: https://github.com/LordEasSan/orchestrator-ai
   thumbnail: /assets/images/projects/orchestrator-ai.svg
+  visibility: review
+  review_note: "Repo 404."
 
 - id: project-eye
   title: Eye on Security
   excerpt: "Real-time anomaly detection dashboard combining statistical methods with ML classifiers. Automated alerting, SIEM integration, and forensic timeline export."
   year: 2024
-  status: active
-  tags:
-    - security
-    - ml
-    - dashboard
+  status: unknown
+  tags: [security, ml, dashboard]
   github: https://github.com/LordEasSan/eye-on-security
   thumbnail: /assets/images/projects/eye-on-security.svg
+  visibility: review
+  review_note: "Repo 404."
 
 - id: project-sigint
   title: SigINT Scanner
   excerpt: "Network traffic analysis tool for identifying suspicious patterns, DNS anomalies, and C2 beaconing behaviour using ensemble ML models."
   year: 2024
-  status: completed
-  tags:
-    - security
-    - ml
-    - tooling
+  status: unknown
+  tags: [security, ml, tooling]
   github: https://github.com/LordEasSan/sigint-scanner
   thumbnail: /assets/images/projects/sigint-scanner.svg
+  visibility: review
+  review_note: "Repo 404."
 
 - id: project-diffguard
   title: DiffGuard
   excerpt: "Adversarial robustness testing framework for production ML models. Generates perturbation attacks and measures model resilience across input dimensions."
   year: 2024
-  status: active
-  tags:
-    - ai
-    - security
-    - research
+  status: unknown
+  tags: [ai, security, research]
   github: https://github.com/LordEasSan/diffguard
   thumbnail: /assets/images/projects/diffguard.svg
+  visibility: review
+  review_note: "Repo 404."
 
 - id: project-infractl
   title: InfraCTL
   excerpt: "Infrastructure-as-code toolkit for deploying secure, isolated ML training environments. Supports Kubernetes, Podman, and bare-metal setups with zero-trust networking."
   year: 2023
-  status: completed
-  tags:
-    - infra
-    - security
-    - devops
+  status: unknown
+  tags: [infra, security, devops]
   github: https://github.com/LordEasSan/infractl
   thumbnail: /assets/images/projects/infractl.svg
+  visibility: review
+  review_note: "Repo 404."

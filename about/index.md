@@ -1,94 +1,100 @@
 ---
 layout: default
 title: About
-description: "About me — background, skills, and experience in AI engineering and cybersecurity."
+description: "About Alessandro Bragetti — SAP developer since 2020: ABAP on SAP ERP/ECC, SAP BTP and Integration Suite, now SAP BTP full-stack development at Accenture."
 ---
+{%- assign pr = site.data.profile -%}
 
-<section class="section fade-in">
-  <div class="about-section">
-    <p class="mono accent" style="margin:0 0 8px;font-size:0.85rem">> whoami</p>
-    <h1>About Me</h1>
+<section class="section fade-in about-section" aria-labelledby="about-title">
+  <p class="mono accent hero-prompt">&gt; whoami</p>
+  <h1 id="about-title">About</h1>
 
-    <div class="row" style="gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-3);align-items:flex-start">
-      <div class="photo-frame" style="width:160px;height:160px;flex-shrink:0">
-        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile photo" width="160" height="160">
-      </div>
-      <div style="flex:1;min-width:280px">
-        <p class="lead" style="margin-top:0">AI Engineer with a security-first mindset. I design and build intelligent systems that are scalable, resilient, and meaningful — bridging machine learning with cybersecurity to solve real-world problems.</p>
-        <p class="muted">Based in Italy. Working at the intersection of artificial intelligence, security research, and systems architecture. I believe technology should serve people — not the other way around.</p>
-      </div>
+  <div class="about-intro">
+    {% include profile-photo.html size=160 %}
+    <div>
+      <p class="lead">I'm {{ pr.name }}, an SAP developer based in {{ pr.location }}. I have worked in the SAP ecosystem since 2020: ABAP on SAP ERP/ECC first, then SAP BTP and enterprise integration, and since May 2025 full-stack development on SAP BTP at Accenture.</p>
+      <p class="muted">Outside client work I write about and experiment with AI systems, and I practise security through CTF labs. Those are personal interests and learning, not professional roles, and the site keeps them clearly separate.</p>
     </div>
+  </div>
+</section>
 
-    <h2 class="section-title" style="margin-top:var(--space-5)">Skills & Technologies</h2>
-    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
-      <div>
-        <h3 class="mono muted" style="font-size:0.8rem;margin:0 0 8px">// languages & frameworks</h3>
-        <ul class="skills-list">
-          <li class="badge">Python</li>
-          <li class="badge">PyTorch</li>
-          <li class="badge">TensorFlow</li>
-          <li class="badge">scikit-learn</li>
-          <li class="badge">JavaScript</li>
-          <li class="badge">Go</li>
-          <li class="badge">SQL</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="mono muted" style="font-size:0.8rem;margin:0 0 8px">// security & infrastructure</h3>
-        <ul class="skills-list">
-          <li class="badge">Threat Modeling</li>
-          <li class="badge">Penetration Testing</li>
-          <li class="badge">SIEM / SOC</li>
-          <li class="badge">Docker / K8s</li>
-          <li class="badge">Terraform</li>
-          <li class="badge">CI/CD</li>
-          <li class="badge">AWS</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="mono muted" style="font-size:0.8rem;margin:0 0 8px">// ai & data</h3>
-        <ul class="skills-list">
-          <li class="badge">ML Pipelines</li>
-          <li class="badge">NLP</li>
-          <li class="badge">Computer Vision</li>
-          <li class="badge">Anomaly Detection</li>
-          <li class="badge">MLOps</li>
-          <li class="badge">Data Engineering</li>
-        </ul>
-      </div>
+<section class="section about-section" id="experience" aria-labelledby="exp-title">
+  <h2 id="exp-title" class="section-title">Experience</h2>
+  <ol class="timeline">
+    {%- for job in pr.experience %}
+    <li class="timeline-item{% if job.current %} is-current{% endif %}">
+      <p class="timeline-date"><time datetime="{{ job.start_iso }}">{{ job.start }}</time> – {% if job.end_iso %}<time datetime="{{ job.end_iso }}">{{ job.end }}</time>{% else %}{{ job.end }}{% endif %}</p>
+      <h3>{{ job.role }} <span class="timeline-company">· {{ job.company }}</span></h3>
+      <p class="muted">{{ job.summary }}</p>
+      <ul class="timeline-highlights">
+        {%- for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+      </ul>
+      <ul class="tag-list" aria-label="Technologies at {{ job.company }}">
+        {%- for t in job.stack %}<li class="badge">{{ t }}</li>{% endfor %}
+      </ul>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="section about-section" aria-labelledby="skills-title">
+  <h2 id="skills-title" class="section-title">Skills</h2>
+  <div class="skills-groups">
+    {%- for g in pr.skills %}
+    <div class="skills-group">
+      <h3 class="mono skills-heading">// {{ g.group }}</h3>
+      <ul class="skills-list">
+        {%- for s in g.items %}<li class="badge">{{ s }}</li>{% endfor %}
+      </ul>
     </div>
+    {%- endfor %}
+  </div>
+  <p class="muted small-note">No self-rated levels: the experience above shows where each skill was used.</p>
+</section>
 
-    <h2 class="section-title" style="margin-top:var(--space-5)">Timeline</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">2024 – Present</div>
-        <h3>AI Engineer</h3>
-        <p class="muted">Designing production ML systems, orchestration pipelines, and adversarial robustness frameworks. Focus on secure-by-design AI infrastructure.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2022 – 2024</div>
-        <h3>Security Researcher</h3>
-        <p class="muted">Threat modeling for cloud architectures, vulnerability assessment, static analysis tooling, and quantum-safe cryptographic evaluation.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2020 – 2022</div>
-        <h3>Full-Stack Developer</h3>
-        <p class="muted">Building web applications, REST APIs, and cloud-native microservices. Introduced DevSecOps practices and IaC workflows.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2018 – 2020</div>
-        <h3>CS Student & Self-taught Hacker</h3>
-        <p class="muted">Computer Science studies, CTF competitions, open-source contributions, and first steps in machine learning research.</p>
-      </div>
+<section class="section about-section" aria-labelledby="edu-title">
+  <h2 id="edu-title" class="section-title">Education, languages &amp; certifications</h2>
+  <div class="facts-grid">
+    <div>
+      <h3 class="mono skills-heading">// education</h3>
+      {%- for e in pr.education %}
+      <p><strong>{{ e.title }}</strong><br><span class="muted">{{ e.school }} · {{ e.year }}</span></p>
+      {%- endfor %}
     </div>
+    <div>
+      <h3 class="mono skills-heading">// languages</h3>
+      <ul class="plain-list">
+        {%- for l in pr.languages %}<li><strong>{{ l.name }}</strong> — <span class="muted">{{ l.level }}</span></li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="mono skills-heading">// certifications</h3>
+      {%- assign lang_q = site.data.certifications | where: "category", "language-qualification" | where: "public", true %}
+      <ul class="plain-list">
+        {%- for c in lang_q %}<li><strong>{{ c.title }}</strong><br><span class="muted">{{ c.subtitle }}</span></li>{% endfor %}
+      </ul>
+      <p><a href="{{ '/certifications/' | relative_url }}">Certifications &amp; training →</a></p>
+    </div>
+  </div>
+</section>
 
-    <div class="card" style="margin-top:var(--space-5);text-align:center;padding:var(--space-4)">
-      <h2 class="section-title" style="margin:0 0 var(--space-2)">Let's Connect</h2>
-      <p class="muted" style="margin:0 0 var(--space-3)">Interested in collaborating on AI or security projects? Let's talk.</p>
-      <div class="row" style="justify-content:center;gap:12px;flex-wrap:wrap">
-        <a class="btn primary" href="mailto:{{ site.email }}">Get in Touch</a>
-        <a class="btn ghost" href="{{ site.social[0].url }}" target="_blank" rel="noopener">GitHub</a>
-      </div>
+<section class="section about-section" aria-labelledby="approach-title">
+  <h2 id="approach-title" class="section-title">How I work</h2>
+  <ul class="approach-list">
+    <li><strong>Model first.</strong> On SAP BTP I start from the CDS model and the service contract, because the Fiori app, the OData API and the S/4HANA integration all depend on it.</li>
+    <li><strong>Integration is part of the feature.</strong> Years of IDoc, RFC, OData and Integration Suite work taught me that most production issues live between systems, so I design for errors, monitoring and traceability.</li>
+    <li><strong>Close to the functional side.</strong> Requirements, estimates and test cases are shared work with functional colleagues, not a handover.</li>
+  </ul>
+</section>
+
+<section class="section about-section" id="contact" aria-labelledby="contact-title">
+  <div class="card contact-card">
+    <h2 id="contact-title" class="section-title">Contact</h2>
+    <p class="muted">For SAP BTP roles and collaborations, LinkedIn or email is the quickest way to reach me.</p>
+    <div class="row contact-actions">
+      <a class="btn primary" href="{{ pr.contact.linkedin }}" rel="noopener me">LinkedIn</a>
+      <a class="btn ghost" href="mailto:{{ pr.contact.email }}">{{ pr.contact.email }}</a>
+      <a class="btn ghost" href="{{ pr.contact.github }}" rel="noopener me">GitHub</a>
     </div>
   </div>
 </section>

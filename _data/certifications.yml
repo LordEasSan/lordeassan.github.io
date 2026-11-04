@@ -1,0 +1,101 @@
+# ─────────────────────────────────────────────────────────────
+# certifications.yml — data model for /certifications/ and About.
+# Add a new entry here; no layout change is needed.
+#
+# Fields
+#   id            unique slug
+#   title         display name
+#   subtitle      optional one-liner
+#   issuer        awarding body / provider
+#   category      formal-certification | language-qualification |
+#                 course-completion | training-course | self-directed
+#   date          "YYYY-MM" or "YYYY" (leave empty if unknown — never guess)
+#   skills        list of skill tags
+#   credential_url  public verification link (optional)
+#   verification  documented   = verified against a certificate/credential
+#                 declared     = stated by me, document not inspected here
+#                 listed-on-cv = appears in my CV, completion evidence not inspected
+#   image         optional privacy-safe image path (NO candidate numbers,
+#                 signatures, dates of birth or QR codes)
+#   public        false hides the entry from the site
+#
+# Privacy: never publish certificate/candidate numbers or full scans.
+# ─────────────────────────────────────────────────────────────
+
+- id: trinity-gese-7
+  title: "Trinity College London — GESE Grade 7 (CEFR B2.1)"
+  subtitle: "English Speaking & Listening · September 2026"
+  issuer: "Trinity College London"
+  qualification: "Graded Examination in Spoken English (GESE), Grade 7 — Level 1 Certificate in ESOL International (Speaking and Listening)"
+  category: language-qualification
+  date: "2026-09"
+  skills: ["English (B2.1)", "Speaking", "Listening"]
+  credential_url: ""
+  verification: declared
+  image: ""
+  public: true
+
+- id: practical-sap-integration-suite
+  title: "Practical SAP Integration Suite 3.0"
+  subtitle: "Modules: Cloud Integration · API Management · Advanced Event Mesh"
+  issuer: ""
+  category: training-course
+  date: ""
+  skills: ["SAP Integration Suite", "Cloud Integration", "API Management", "Advanced Event Mesh"]
+  credential_url: ""
+  verification: listed-on-cv
+  public: true
+
+- id: react-complete-guide
+  title: "React JS Complete Guide for Frontend Web Development"
+  issuer: ""
+  category: training-course
+  date: ""
+  skills: ["HTML5", "CSS", "JavaScript", "jQuery", "React"]
+  verification: listed-on-cv
+  public: true
+
+- id: dsa-python
+  title: "Data Structures & Algorithms in Python"
+  issuer: ""
+  category: training-course
+  date: ""
+  skills: ["Big O", "Linked lists", "Stacks & queues", "Hash tables", "Trees", "Graphs", "Recursion", "Sorting"]
+  verification: listed-on-cv
+  public: true
+
+- id: advanced-algorithms-graph-theory
+  title: "Advanced Algorithms and Graph Theory with Python"
+  issuer: ""
+  category: training-course
+  date: ""
+  skills: ["Graph traversal", "Shortest paths", "Complexity", "NP-completeness", "Heuristics"]
+  verification: listed-on-cv
+  public: true
+
+- id: discrete-mathematics
+  title: "Discrete Mathematics"
+  issuer: ""
+  category: training-course
+  date: ""
+  skills: ["Logic", "Number theory", "Proofs", "Graph theory", "Combinatorics"]
+  verification: listed-on-cv
+  public: true
+
+- id: python-310
+  title: "Python 3.10 — Guida da principiante a esperto"
+  issuer: ""
+  category: training-course
+  date: ""
+  skills: ["Python", "OOP", "RabbitMQ", "MongoDB"]
+  verification: listed-on-cv
+  public: true
+
+- id: cisco-intro-cybersecurity
+  title: "Introduction to Cybersecurity"
+  issuer: "Cisco Networking Academy"
+  category: training-course
+  date: ""
+  skills: ["Network vulnerabilities", "Cyber-attack impact", "Threat detection and defence"]
+  verification: listed-on-cv
+  public: true

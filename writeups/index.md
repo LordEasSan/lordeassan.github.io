@@ -10,13 +10,13 @@ description: "CTF writeups — HackTheBox and TryHackMe challenge solutions."
   <p class="muted" style="max-width:640px">My solutions and walkthroughs for HackTheBox and TryHackMe machines and challenges. Documenting the methodology, tools, and thought process behind each box.</p>
 
   <!-- Platform filter tabs -->
-  <div id="writeup-filters" class="row" style="gap:8px;margin-top:var(--space-3);flex-wrap:wrap">
-    <button class="btn ghost primary" data-filter="all">All</button>
-    <button class="btn ghost" data-filter="hackthebox" style="gap:6px">
-      <span style="color:#9FF300;font-weight:700">■</span> HackTheBox
+  <div id="writeup-filters" class="row filter-bar" role="group" aria-label="Filter writeups by platform">
+    <button type="button" class="btn ghost" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" class="btn ghost" data-filter="hackthebox" aria-pressed="false">
+      <span class="plat-htb" aria-hidden="true">■</span> HackTheBox
     </button>
-    <button class="btn ghost" data-filter="tryhackme" style="gap:6px">
-      <span style="color:#C11111;font-weight:700">■</span> TryHackMe
+    <button type="button" class="btn ghost" data-filter="tryhackme" aria-pressed="false">
+      <span class="plat-thm" aria-hidden="true">■</span> TryHackMe
     </button>
   </div>
 
@@ -28,13 +28,13 @@ description: "CTF writeups — HackTheBox and TryHackMe challenge solutions."
   {% if htb.size > 0 %}
   <div class="writeup-platform-section" data-platform="hackthebox">
     <h2 class="section-title" style="margin-top:var(--space-5)">
-      <span style="color:#9FF300">⬡</span> HackTheBox
+      <span class="plat-htb" aria-hidden="true">⬡</span> HackTheBox
     </h2>
     <div class="writeup-grid stagger">
       {% for w in htb %}
       <a href="{{ w.url | relative_url }}" class="writeup-card card" data-platform="hackthebox">
         <div class="writeup-card-header">
-          <span class="badge" style="background:rgba(159,243,0,0.12);color:#9FF300">HTB</span>
+          <span class="badge badge-htb">HTB</span>
           {% if w.difficulty %}
           <span class="badge {% if w.difficulty == 'Easy' %}diff-easy{% elsif w.difficulty == 'Medium' %}diff-medium{% else %}diff-hard{% endif %}">{{ w.difficulty }}</span>
           {% endif %}
@@ -54,13 +54,13 @@ description: "CTF writeups — HackTheBox and TryHackMe challenge solutions."
   {% if thm.size > 0 %}
   <div class="writeup-platform-section" data-platform="tryhackme">
     <h2 class="section-title" style="margin-top:var(--space-5)">
-      <span style="color:#C11111">◉</span> TryHackMe
+      <span class="plat-thm" aria-hidden="true">◉</span> TryHackMe
     </h2>
     <div class="writeup-grid stagger">
       {% for w in thm %}
       <a href="{{ w.url | relative_url }}" class="writeup-card card" data-platform="tryhackme">
         <div class="writeup-card-header">
-          <span class="badge" style="background:rgba(193,17,17,0.12);color:#C11111">THM</span>
+          <span class="badge badge-thm">THM</span>
           {% if w.difficulty %}
           <span class="badge {% if w.difficulty == 'Easy' %}diff-easy{% elsif w.difficulty == 'Medium' %}diff-medium{% else %}diff-hard{% endif %}">{{ w.difficulty }}</span>
           {% endif %}
@@ -91,10 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var btn = e.target.closest('button');
     if (!btn) return;
     var f = btn.dataset.filter;
-    filters.querySelectorAll('button').forEach(function (b) { b.classList.remove('primary'); });
-    btn.classList.add('primary');
+    filters.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
     sections.forEach(function (s) {
-      s.style.display = (f === 'all' || s.dataset.platform === f) ? '' : 'none';
+      s.hidden = !(f === 'all' || s.dataset.platform === f);
     });
   });
 });

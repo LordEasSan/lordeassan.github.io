@@ -1,12 +1,12 @@
+{%- assign c = site.data.profile.contact -%}
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author | default: site.title }}. Built with Jekyll.</p>
-    {% if site.social %}
-    <p class="muted" style="margin-top:4px;font-size:0.8rem">
-      {% for link in site.social %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>{% unless forloop.last %} &middot; {% endunless %}
-      {% endfor %}
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.data.profile.name }} · {{ site.data.profile.headline }}</p>
+    <p class="muted footer-links">
+      <a href="{{ c.linkedin }}" rel="noopener me">LinkedIn</a> &middot;
+      <a href="{{ c.github }}" rel="noopener me">GitHub</a> &middot;
+      <a href="mailto:{{ c.email }}">Email</a> &middot;
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     </p>
-    {% endif %}
   </div>
 </footer>

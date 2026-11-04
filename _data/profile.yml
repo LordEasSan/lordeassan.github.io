@@ -1,0 +1,122 @@
+# ─────────────────────────────────────────────────────────────
+# profile.yml — single source of truth for professional facts.
+# Rendered by index.md (hero), about/index.md (timeline, skills)
+# and _includes/seo.html (JSON-LD). Keep it consistent with the CV
+# (kept in a separate, private CV project).
+#
+# Provenance keys (not rendered):
+#   cv        = original CV (2025)
+#   declared  = candidate-declared (Nov 2026 brief)
+# Rule: no invented clients, metrics, team sizes or ownership claims.
+# ─────────────────────────────────────────────────────────────
+
+name: "Alessandro Bragetti"
+headline: "SAP BTP & Full Stack Developer"
+secondary: "AI Engineering · Cybersecurity · Intelligent Systems"
+location: "Perugia, Italy"
+intro: >-
+  I build enterprise applications on SAP Business Technology Platform —
+  CAP and Node.js services, SAPUI5 and Fiori front ends, OData and REST
+  integrations with SAP S/4HANA. Outside client work I explore intelligent
+  systems and practise security, mostly through small experiments and CTF labs.
+
+# Career path, oldest → newest (used for the compact "path" strip).
+path:
+  - label: "SAP ERP/ECC & ABAP"
+    years: "2020 – 2023"
+  - label: "SAP BTP & Enterprise Integration"
+    years: "2023 – 2025"
+  - label: "SAP BTP Full Stack Development"
+    years: "2025 – present"
+
+experience:
+  - id: accenture
+    role: "SAP BTP / Full Stack Developer"
+    company: "Accenture"
+    start: "May 2025"
+    start_iso: "2025-05"
+    end: "Present"
+    current: true
+    source: declared
+    summary: "Enterprise web applications in the SAP ecosystem for digital transformation and process optimisation projects."
+    highlights:
+      - "Backend services and application logic with SAP Cloud Application Programming Model (CAP) and Node.js; entities and services modelled with Core Data Services (CDS)."
+      - "Responsive user interfaces with SAPUI5 and SAP Fiori."
+      - "Design, exposure and integration of REST APIs and OData services; integration with SAP S/4HANA and other enterprise systems."
+      - "Deployment and operation of cloud applications on SAP BTP, Cloud Foundry environment."
+      - "Work with multidisciplinary teams across requirements analysis, development, testing and release."
+    stack: ["SAP CAP", "Node.js", "CDS", "SAPUI5", "SAP Fiori", "REST", "OData", "Cloud Foundry", "SAP S/4HANA"]
+
+  - id: idgfab
+    role: "SAP BTP Consultant"
+    company: "IDGFAB S.r.l."
+    start: "Mar 2023"
+    start_iso: "2023-03"
+    end: "May 2025"
+    end_iso: "2025-05"
+    source: cv
+    summary: "SAP BTP development and system integration."
+    highlights:
+      - "SAP Fiori applications and CAP projects in SAP Business Application Studio, including the OData services the apps consume."
+      - "Integrations on SAP Integration Suite (Cloud Integration) with Groovy scripts and IDoc, SFTP, HTTP, AMQP, RFC and OData adapters."
+      - "OData API development and API management with SAP API Management."
+      - "Migration of integrations from SAP PI/PO to SAP Cloud Integration; PI/PO documentation and team training."
+      - "Technical support and training for colleagues and customers on Integration Suite."
+    stack: ["SAP BTP", "SAP Fiori", "SAP CAP", "Business Application Studio", "Integration Suite", "Cloud Integration", "Groovy", "API Management", "OData", "SAP PI/PO"]
+
+  - id: software-business
+    role: "SAP Software Developer"
+    company: "Software Business S.p.A."
+    start: "2020"
+    start_iso: "2020"
+    end: "2023"
+    end_iso: "2023"
+    source: declared
+    summary: "Development and maintenance of enterprise applications on SAP ERP/ECC."
+    highlights:
+      - "ABAP development in ABAP Workbench and SAP GUI: custom reports, executable programs, function modules and application logic."
+      - "Enhancements, user exits and BAdIs; data-processing programs."
+      - "Integration between SAP modules and external systems via IDoc, RFC and BAPI."
+      - "Open SQL, performance analysis, debugging, testing and evolutionary maintenance across development, quality and production systems."
+    stack: ["ABAP", "SAP ERP/ECC", "ABAP Workbench", "SAP GUI", "IDoc", "RFC", "BAPI", "BAdI", "Open SQL"]
+
+education:
+  - title: "Diploma — Accountant and Commercial Expert (Ragioniere e Perito Commerciale)"
+    school: "I.T.C. Aldo Capitini – Vittorio Emanuele II, Perugia"
+    year: "2012"
+    source: cv
+
+languages:
+  - name: "Italian"
+    level: "Native"
+  - name: "English"
+    level: "B2 — Trinity GESE Grade 7 (CEFR B2.1, Sept 2026)"
+  - name: "French"
+    level: "B1"
+
+# Skills: documented only. Grouped by dimension; no proficiency ratings.
+skills:
+  - group: "SAP & enterprise"
+    dimension: professional
+    items: ["SAP BTP", "SAP CAP", "Core Data Services (CDS)", "SAPUI5", "SAP Fiori", "OData", "REST APIs", "Cloud Foundry", "Business Application Studio", "SAP Integration Suite", "SAP API Management", "Groovy", "SAP PI/PO", "SAP S/4HANA integration", "ABAP", "SAP ERP/ECC", "IDoc · RFC · BAPI"]
+  - group: "Web & languages"
+    dimension: professional
+    items: ["JavaScript", "Node.js", "HTML", "CSS", "React", "Python"]
+  - group: "Tooling"
+    dimension: professional
+    items: ["Git", "VS Code", "NPM", "Docker", "Linux", "Windows"]
+  - group: "Security & systems (learning and practice)"
+    dimension: security
+    items: ["Networking fundamentals (TCP/IP, OSI, DNS, DHCP)", "Linux environments", "CTF labs (HackTheBox, TryHackMe)", "Cisco NetAcad — Introduction to Cybersecurity"]
+  - group: "AI & computer science (research and experiments)"
+    dimension: ai
+    items: ["AI-assisted development", "Adversarial ML (writing)", "Data structures & algorithms", "Graph theory", "Discrete mathematics"]
+
+# NOT rendered. Listed on the previous site version without supporting
+# evidence. Confirm (and say where it was used) before re-adding to `skills`.
+skills_pending_confirmation: ["PyTorch", "TensorFlow", "scikit-learn", "Go", "SQL", "Threat Modeling", "Penetration Testing", "SIEM / SOC", "Kubernetes", "Terraform", "CI/CD", "AWS", "NLP", "Computer Vision", "Anomaly Detection", "MLOps", "Data Engineering"]
+
+contact:
+  email: "alessandro.bragetti17@gmail.com"
+  github: "https://github.com/LordEasSan"
+  linkedin: "https://www.linkedin.com/in/alessandro-bragetti-a60447211/"

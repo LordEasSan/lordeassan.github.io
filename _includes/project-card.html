@@ -1,0 +1,34 @@
+{%- assign p = include.project -%}
+{%- assign labels = "professional:Professional case study,personal:Personal project,experiment:Experiment,open-source:Open source,learning:Learning & practice,research:Research,archived:Archived" | split: "," -%}
+{%- assign cat_label = p.category -%}
+{%- for l in labels -%}{%- assign kv = l | split: ":" -%}{%- if kv[0] == p.category -%}{%- assign cat_label = kv[1] -%}{%- endif -%}{%- endfor -%}
+<article class="project-card card" data-category="{{ p.category }}">
+  {%- if p.thumbnail %}
+  <div class="project-thumb">
+    <img src="{{ p.thumbnail | relative_url }}" alt="" width="320" height="180" loading="lazy" decoding="async">
+  </div>
+  {%- endif %}
+  <div class="project-body">
+    <p class="project-kicker mono"><span class="kicker-cat">{{ cat_label }}</span>{% if p.context %} · {{ p.context }}{% endif %}{% if p.year %} · {{ p.year }}{% endif %}</p>
+    <h3>
+      {%- if p.live -%}<a href="{{ p.live }}" rel="noopener">{{ p.title }}</a>
+      {%- elsif p.github -%}<a href="{{ p.github }}" rel="noopener">{{ p.title }}</a>
+      {%- else -%}{{ p.title }}{%- endif -%}
+    </h3>
+    <p>{{ p.excerpt }}</p>
+    {%- if p.tags %}
+    <ul class="tag-list" aria-label="Technologies">
+      {%- for tag in p.tags %}<li class="badge">{{ tag }}</li>{% endfor %}
+    </ul>
+    {%- endif %}
+    {%- if p.github or p.live %}
+    <p class="project-links">
+      {%- if p.live %}<a href="{{ p.live }}" rel="noopener">Live app<span class="sr-only"> — {{ p.title }}</span></a>{% endif -%}
+      {%- if p.live and p.github %} · {% endif -%}
+      {%- if p.github %}<a href="{{ p.github }}" rel="noopener">Source<span class="sr-only"> — {{ p.title }}</span></a>{% endif -%}
+    </p>
+    {%- elsif p.category == 'professional' %}
+    <p class="project-links muted">Client work — described in general terms; no code or client data shown.</p>
+    {%- endif %}
+  </div>
+</article>
